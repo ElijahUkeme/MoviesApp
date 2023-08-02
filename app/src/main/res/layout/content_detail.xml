@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_home_detail_activity"
+    tools:context=".activities.HomeDetailActivity"
+    android:background="@color/viewBg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        tools:showIn="@layout/activity_home_detail_activity"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/movieTitle"
+                android:text="Movie Title"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:textSize="20sp"
+                android:layout_marginLeft="@dimen/layout_margin_left"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/plotSynopsis"
+                android:text="Plot Synopsis"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:textSize="20sp"
+                android:layout_marginLeft="@dimen/layout_margin_left"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/userRating"
+                android:text="User Rating"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:textSize="20sp"
+                android:layout_marginLeft="@dimen/layout_margin_left"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <com.github.ivbaranov.mfb.MaterialFavoriteButton
+                    android:id="@+id/material_button_favorite"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/releaseDate"
+                android:text="12-06-2023"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:textSize="20sp"
+                android:layout_marginLeft="@dimen/layout_margin_left"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:id="@+id/thumbnailUrl"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:text="@string/trailer"
+                android:id="@+id/trailer"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:scrollbars="vertical"
+                android:id="@+id/recyclerview_trailer"/>
+
+        </LinearLayout>
+    </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>
